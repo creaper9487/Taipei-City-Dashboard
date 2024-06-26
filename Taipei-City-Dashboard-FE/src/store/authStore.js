@@ -25,7 +25,6 @@ export const useAuthStore = defineStore("auth", {
 			is_blacked: null,
 			login_at: null,
 			is_admin: false,
-			theme: "dark",
 			lang: "zh-Hant",
 		},
 		editUser: {},
@@ -41,10 +40,6 @@ export const useAuthStore = defineStore("auth", {
 		/* Authentication Functions */
 		// 1. Initial Checks
 		async initialChecks() {
-			///
-			// document.getElementsByTagName("body")[0].className = "light";
-			///
-
 			const contentStore = useContentStore();
 			const mapStore = useMapStore();
 			// Check if the user is using a mobile device
@@ -107,8 +102,6 @@ export const useAuthStore = defineStore("auth", {
 			}
 			this.user = response.data.user;
 			this.editUser = JSON.parse(JSON.stringify(this.user));
-
-			document.getElementsByTagName("body")[0].className = this.user.mode;
 
 			contentStore.publicDashboards = [];
 			router.go();
