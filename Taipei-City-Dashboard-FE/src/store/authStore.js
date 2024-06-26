@@ -25,6 +25,7 @@ export const useAuthStore = defineStore("auth", {
 			is_blacked: null,
 			login_at: null,
 			is_admin: false,
+			theme: "dark",
 			lang: "zh-Hant",
 		},
 		editUser: {},
@@ -101,7 +102,10 @@ export const useAuthStore = defineStore("auth", {
 				localStorage.setItem("isso_token", this.isso_token);
 			}
 			this.user = response.data.user;
+
 			this.editUser = JSON.parse(JSON.stringify(this.user));
+
+			document.getElementsByTagName("body")[0].className = this.user.mode;
 
 			contentStore.publicDashboards = [];
 			router.go();

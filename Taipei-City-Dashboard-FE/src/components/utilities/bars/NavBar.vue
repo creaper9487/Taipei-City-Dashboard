@@ -9,7 +9,6 @@ import { useRoute } from "vue-router";
 import { useFullscreen } from "@vueuse/core";
 import { useAuthStore } from "../../../store/authStore";
 import { useDialogStore } from "../../../store/dialogStore";
-import { i18n } from "../../../i18n";
 import UserSettings from "../../dialogs/UserSettings.vue";
 import ContributorsList from "../../dialogs/ContributorsList.vue";
 
@@ -82,12 +81,12 @@ const linkQuery = computed(() => {
 					isFullscreen ? "fullscreen_exit" : "fullscreen"
 				}}</span>
 			</button>
-			<!-- <div class="navbar-theme">
+			<div class="navbar-theme">
 				<button @click="authStore.toggleTheme">
 					theme
 					<span>theme</span>
 				</button>
-			</div> -->
+			</div>
 			<div class="navbar-language">
 				<button><span>language</span></button>
 				<ul>
@@ -97,7 +96,9 @@ const linkQuery = computed(() => {
 						</button>
 					</li>
 					<li>
-						<button>繁體中文</button>
+						<button @click="authStore.setLanguage('zh-Hant')">
+							繁體中文
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -246,6 +247,7 @@ const linkQuery = computed(() => {
 		@media screen and (max-width: 750px) {
 			display: none;
 		}
+
 		@media screen and (max-height: 500px) {
 			display: none;
 		}
@@ -288,6 +290,7 @@ const linkQuery = computed(() => {
 			@media screen and (max-width: 750px) {
 				display: none;
 			}
+
 			@media screen and (max-height: 500px) {
 				display: none;
 			}
@@ -339,6 +342,7 @@ const linkQuery = computed(() => {
 					top: 55px;
 				}
 			}
+
 			@media screen and (max-height: 500px) {
 				display: flex;
 			}
