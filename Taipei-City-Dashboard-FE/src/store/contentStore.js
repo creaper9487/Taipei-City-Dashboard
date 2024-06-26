@@ -12,6 +12,7 @@ import router from "../router/index";
 import { useDialogStore } from "./dialogStore";
 import { useAuthStore } from "./authStore";
 import { getComponentDataTimeframe } from "../assets/utilityFunctions/dataTimeframe";
+import i18n from "../i18n.js";
 
 export const useContentStore = defineStore("content", {
 	state: () => ({
@@ -48,7 +49,11 @@ export const useContentStore = defineStore("content", {
 		error: false,
 		ws: false,
 	}),
-	getters: {},
+	getters: {
+		getTranlation(a) {
+			return i18n.t(a);
+		},
+	},
 	actions: {
 		/* Steps in adding content to the application (/dashboard or /mapview) */
 		// 1. Check the current path and execute actions based on the current path

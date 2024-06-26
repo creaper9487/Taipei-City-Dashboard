@@ -21,6 +21,7 @@ import router from "./router";
 import { createPinia } from "pinia";
 import VueApexCharts from "vue3-apexcharts";
 import debounce from "lodash/debounce";
+import i18nInstance from "/utils/i18n.ts";
 
 const app = createApp(App);
 
@@ -44,5 +45,5 @@ pinia.use(({ options, store }) => {
 
 app.use(pinia);
 app.use(VueApexCharts);
-
+app.use(i18nInstance);
 app.mount("#app");

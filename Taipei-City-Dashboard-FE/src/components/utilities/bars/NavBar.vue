@@ -9,7 +9,7 @@ import { useRoute } from "vue-router";
 import { useFullscreen } from "@vueuse/core";
 import { useAuthStore } from "../../../store/authStore";
 import { useDialogStore } from "../../../store/dialogStore";
-
+import { i18n } from "../../../i18n";
 import UserSettings from "../../dialogs/UserSettings.vue";
 import ContributorsList from "../../dialogs/ContributorsList.vue";
 
@@ -55,21 +55,21 @@ const linkQuery = computed(() => {
 						authStore.currentPath.includes('component'),
 				}"
 			>
-				組件瀏覽平台
+				{{ $t("組件瀏覽平台") }}
 			</router-link>
 			<router-link
 				:to="`/dashboard${
 					linkQuery.includes('undefined') ? '' : linkQuery
 				}`"
 			>
-				儀表板總覽
+				{{ $t("儀表板總覽") }}
 			</router-link>
 			<router-link
 				:to="`/mapview${
 					linkQuery.includes('undefined') ? '' : linkQuery
 				}`"
 			>
-				地圖交叉比對
+				{{ $t("地圖交叉比對") }}
 			</router-link>
 		</div>
 		<div class="navbar-user">
@@ -82,11 +82,24 @@ const linkQuery = computed(() => {
 					isFullscreen ? "fullscreen_exit" : "fullscreen"
 				}}</span>
 			</button>
-			<div class="theme">
+			<!-- <div class="navbar-theme">
 				<button @click="authStore.toggleTheme">
 					theme
 					<span>theme</span>
 				</button>
+			</div> -->
+			<div class="navbar-language">
+				<button><span>language</span></button>
+				<ul>
+					<li>
+						<button @click="authStore.setLanguage('en')">
+							English
+						</button>
+					</li>
+					<li>
+						<button>繁體中文</button>
+					</li>
+				</ul>
 			</div>
 			<div class="navbar-user-info">
 				<button><span>info</span></button>
@@ -96,14 +109,14 @@ const linkQuery = computed(() => {
 							href="https://tuic.gov.taipei/documentation"
 							target="_blank"
 							rel="noreferrer"
-							>技術文件</a
+							>{{ $t("技術文件") }}</a
 						>
 					</li>
 					<li>
 						<button
 							@click="dialogStore.showDialog('contributorsList')"
 						>
-							專案貢獻者
+							{{ $t("專案貢獻者") }}
 						</button>
 					</li>
 				</ul>
@@ -124,7 +137,7 @@ const linkQuery = computed(() => {
 				<ul>
 					<li>
 						<button @click="dialogStore.showDialog('userSettings')">
-							用戶設定
+							{{ $t("用戶設定") }}
 						</button>
 					</li>
 					<li
@@ -134,16 +147,22 @@ const linkQuery = computed(() => {
 						"
 						class="hide-if-mobile"
 					>
-						<router-link to="/admin"> 管理員後臺 </router-link>
+						<router-link to="/admin">
+							{{ $t("管理員後臺") }}
+						</router-link>
 					</li>
 					<li
 						v-else-if="authStore.user.is_admin"
 						class="hide-if-mobile"
 					>
-						<router-link to="/dashboard"> 返回儀表板 </router-link>
+						<router-link to="/dashboard">
+							{{ $t("返回儀表板") }}
+						</router-link>
 					</li>
 					<li>
-						<button @click="authStore.handleLogout">登出</button>
+						<button @click="authStore.handleLogout">
+							{{ $t("登出") }}
+						</button>
 					</li>
 				</ul>
 				<teleport to="body">
@@ -156,7 +175,9 @@ const linkQuery = computed(() => {
 				"
 				class="navbar-user-user"
 			>
-				<button @click="dialogStore.showDialog('login')">登入</button>
+				<button @click="dialogStore.showDialog('login')">
+					{{ $t("登入") }}
+				</button>
 			</div>
 		</div>
 	</div>
