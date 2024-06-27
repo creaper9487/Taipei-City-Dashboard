@@ -21,7 +21,7 @@ import router from "./router";
 import { createPinia } from "pinia";
 import VueApexCharts from "vue3-apexcharts";
 import debounce from "lodash/debounce";
-import i18nInstance from "/utils/i18n.ts";
+import i18nInstance from "./i18n.js";
 
 const app = createApp(App);
 

@@ -25,7 +25,7 @@ export const useAuthStore = defineStore("auth", {
 			is_blacked: null,
 			login_at: null,
 			is_admin: false,
-			lang: "zh-Hant",
+			lang: "zh",
 		},
 		editUser: {},
 		token: null,
