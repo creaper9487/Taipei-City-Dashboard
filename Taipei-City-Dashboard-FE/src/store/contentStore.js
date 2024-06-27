@@ -12,6 +12,7 @@ import router from "../router/index";
 import { useDialogStore } from "./dialogStore";
 import { useAuthStore } from "./authStore";
 import { getComponentDataTimeframe } from "../assets/utilityFunctions/dataTimeframe";
+import i18n from "../i18n.js";
 
 export const useContentStore = defineStore("content", {
 	state: () => ({
@@ -49,8 +50,8 @@ export const useContentStore = defineStore("content", {
 		ws: false,
 	}),
 	getters: {
-		i18n() {
-			return this.$i18n.global;
+		getTranlation(a) {
+			return i18n.t(a);
 		},
 	},
 	actions: {

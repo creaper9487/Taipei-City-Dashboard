@@ -31,8 +31,6 @@ type AuthUser struct {
 	ExpiredAt     *time.Time `json:"expired_at" gorm:"column:expired_at;type:timestamp with time zone;"` // 停用時間
 	CreatedAt     time.Time  `json:"created_at" gorm:"column:created_at;type:timestamp with time zone;"`
 	LoginAt       time.Time  `json:"login_at" gorm:"column:login_at;type:timestamp with time zone;"`
-	Theme		  string     `json:"theme" gorm:"column:theme;type:varchar;default:'light'"`
-	Lang		  string	 `json:"lang" gorm:"column:lang;type:varchar;default:'zh-TW'"`
 	// Roles       []Role       `json:"roles" gorm:"many2many:email_user_roles;"`
 	// Groups      []Group      `json:"groups" gorm:"many2many:email_user_groups;"`
 }
