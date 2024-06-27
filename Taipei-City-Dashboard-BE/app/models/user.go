@@ -31,6 +31,8 @@ type AuthUser struct {
 	ExpiredAt     *time.Time `json:"expired_at" gorm:"column:expired_at;type:timestamp with time zone;"` // 停用時間
 	CreatedAt     time.Time  `json:"created_at" gorm:"column:created_at;type:timestamp with time zone;"`
 	LoginAt       time.Time  `json:"login_at" gorm:"column:login_at;type:timestamp with time zone;"`
+	Theme		  string     `json:"theme" gorm:"column:theme;type:varchar;default:'light'"`
+	Lang          string     `json:"lang" gorm:"column:lang;type:varchar;default:'zh'"`
 	// Roles       []Role       `json:"roles" gorm:"many2many:email_user_roles;"`
 	// Groups      []Group      `json:"groups" gorm:"many2many:email_user_groups;"`
 }
@@ -174,8 +176,10 @@ func UpdateUser(userID int, name string, isAdmin, isActive, isWhitelist, isBlack
 	return user, nil
 }
 
-func UpdateSelf(userID int, name string) (user AuthUser, err error) {
+func UpdateSelf(userID int, name string, theme string, lang string) (user AuthUser, err error) {
 	user.Name = name
+	user.Theme = theme
+	user.Lang = lang
 
 	err = DBManager.Table("auth_users").Where("id = ?", userID).Updates(&user).Error
 	if err != nil {

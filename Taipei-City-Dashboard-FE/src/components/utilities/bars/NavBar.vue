@@ -97,7 +97,9 @@ const linkQuery = computed(() => {
 						</button>
 					</li>
 					<li>
-						<button>繁體中文</button>
+						<button @click="authStore.setLanguage('zh')">
+							繁體中文
+						</button>
 					</li>
 				</ul>
 			</div>
