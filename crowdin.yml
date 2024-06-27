@@ -1,0 +1,5 @@
+bundles:
+  - 2
+files:
+  - source: /Taipei-City-Dashboard-FE/src/locale/zh-Hant.json
+    translation: /Taipei-City-Dashboard-FE/src/locale/%language%.json
