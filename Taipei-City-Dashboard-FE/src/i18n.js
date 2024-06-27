@@ -5,7 +5,7 @@ const messages = {
 	zh,
 };
 const instance = createI18n({
-	locale: "zh-Hant", // Default locale
+	locale: "zh", // Default locale
 	fallbackLocale: "zh", // Fallback to default if translation not found
 	messages,
 });
