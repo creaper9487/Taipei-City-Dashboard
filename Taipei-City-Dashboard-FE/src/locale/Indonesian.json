@@ -1,14 +1,14 @@
 {
 	"zh": {
-		"組件瀏覽平台": "組件瀏覽平台",
-		"儀表板總覽": "儀表板總覽",
-		"地圖交叉比對": "地圖交叉比對",
-		"技術文件": "技術文件",
-		"專案貢獻者": "專案貢獻者",
-		"用戶設定": "用戶設定",
-		"管理員後臺": "管理員後臺",
-		"返回儀表板": "返回儀表板",
-		"登出": "登出",
-		"登入": "登入"
+		"組件瀏覽平台": "Platform penjelajahan komponen",
+		"儀表板總覽": "Ikhtisar dasbor",
+		"地圖交叉比對": "Perbandingan silang peta",
+		"技術文件": "Dokumen teknis",
+		"專案貢獻者": "Kontributor Proyek",
+		"用戶設定": "Pengaturan pengguna",
+		"管理員後臺": "Bagian belakang administrator",
+		"返回儀表板": "Kembali ke dasbor",
+		"登出": "Keluar",
+		"登入": "Gabung"
 	}
 }
