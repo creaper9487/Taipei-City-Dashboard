@@ -126,6 +126,13 @@ const linkQuery = computed(() => {
 							Thai
 						</button>
 					</li>
+					<a
+							href="https://crowdin.com/project/TaipeiDashBoardDemo"
+							target="_blank"
+							rel="noreferrer"
+							> {{ $t(加入貢獻) }} </a
+						>
+					</li>
 				</ul>
 			</div>
 			<div class="navbar-user-info">
