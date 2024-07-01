@@ -88,7 +88,7 @@ const linkQuery = computed(() => {
 					<span>theme</span>
 				</button>
 			</div> -->
-			<div class="navbar-language">
+			<div class="navbar-user-info">
 				<button><span>language</span></button>
 				<ul>
 					<li>
@@ -126,12 +126,14 @@ const linkQuery = computed(() => {
 							Thai
 						</button>
 					</li>
-					<a
+					<li>
+						<a
 							href="https://crowdin.com/project/TaipeiDashBoardDemo"
 							target="_blank"
 							rel="noreferrer"
-							> {{ $t(加入貢獻) }} </a
 						>
+							{{ $t("加入貢獻") }}
+						</a>
 					</li>
 				</ul>
 			</div>

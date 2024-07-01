@@ -3,9 +3,9 @@ import zh from "../src/locale/zh-Hant.json"; // Path to your translation message
 import en from "../src/locale/English.json"; // Path to your translation messages
 import Khmer from "../src/locale/Khmer.json"; // Path to your translation messages
 import Burmese from "../src/locale/Burmese.json"; // Path to your translation messages
-import indonesian from "../src/locale/indonesian.json"; // Path to your translation messages
-import vietnamese from "../src/locale/vietnamese.json"; // Path to your translation messages
-import thai from "../src/locale/thai.json"; // Path to your translation messages
+import indonesian from "../src/locale/Indonesian.json"; // Path to your translation messages
+import vietnamese from "../src/locale/Vietnamese.json"; // Path to your translation messages
+import thai from "../src/locale/Thai.json"; // Path to your translation messages
 
 const messages = {
 	zh,
