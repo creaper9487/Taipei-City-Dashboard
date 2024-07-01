@@ -1,14 +1,12 @@
 {
-	"zh": {
-		"組件瀏覽平台": "Component browsing platform",
-		"儀表板總覽": "Dashboard overview",
-		"地圖交叉比對": "Map cross comparison",
-		"技術文件": "Technical documents",
-		"專案貢獻者": "Project Contributor",
-		"用戶設定": "User settings",
-		"管理員後臺": "Administrator backend",
-		"返回儀表板": "Return to dashboard",
-		"登出": "Sign out",
-		"登入": "log in"
-	}
+	"組件瀏覽平台": "組件瀏覽平台",
+	"儀表板總覽": "儀表板總覽",
+	"地圖交叉比對": "地圖交叉比對",
+	"技術文件": "技術文件",
+	"專案貢獻者": "專案貢獻者",
+	"用戶設定": "用戶設定",
+	"管理員後臺": "管理員後臺",
+	"返回儀表板": "返回儀表板",
+	"登出": "登出",
+	"登入": "登入"
 }
