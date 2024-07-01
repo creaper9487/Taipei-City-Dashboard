@@ -101,7 +101,31 @@ const linkQuery = computed(() => {
 							繁體中文
 						</button>
 					</li>
-					<li></li>
+					<li>
+						<button @click="authStore.setLanguage('Khmer')">
+							Khmer
+						</button>
+					</li>
+					<li>
+						<button @click="authStore.setLanguage('Burmese')">
+							Burmese
+						</button>
+					</li>
+					<li>
+						<button @click="authStore.setLanguage('indonesian')">
+							indonesian
+						</button>
+					</li>
+					<li>
+						<button @click="authStore.setLanguage('vietnamese')">
+							Vietnamese
+						</button>
+					</li>
+					<li>
+						<button @click="authStore.setLanguage('thai')">
+							Thai
+						</button>
+					</li>
 				</ul>
 			</div>
 			<div class="navbar-user-info">
