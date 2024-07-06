@@ -9,12 +9,13 @@ import { useRoute } from "vue-router";
 import { useFullscreen } from "@vueuse/core";
 import { useAuthStore } from "../../../store/authStore";
 import { useDialogStore } from "../../../store/dialogStore";
+import { useContentStore } from "../../../store/contentStore";
 import UserSettings from "../../dialogs/UserSettings.vue";
 import ContributorsList from "../../dialogs/ContributorsList.vue";
-
 const route = useRoute();
 const authStore = useAuthStore();
 const dialogStore = useDialogStore();
+const contentStore = useContentStore();
 const { isFullscreen, toggle } = useFullscreen();
 
 const linkQuery = computed(() => {
@@ -24,7 +25,7 @@ const linkQuery = computed(() => {
 </script>
 
 <template>
-	<div class="navbar">
+	<div @load="contentStore.progressTracker" class="navbar">
 		<a href="/">
 			<div class="navbar-logo">
 				<div class="navbar-logo-image">
@@ -97,43 +98,45 @@ const linkQuery = computed(() => {
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('en')">
-							English {{ getProgress(688303, "en") }}%
+							English {{ contentStore.translateProg.en }}%
 						</button>
 					</li>
 
 					<li>
 						<button @click="authStore.setLanguage('Khmer')">
-							Khmer {{ getProgress(688303, "km") }}%
+							Khmer {{ contentStore.translateProg.km }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('Burmese')">
-							Burmese {{ getProgress(688303, "my") }}%
+							Burmese {{ contentStore.translateProg.my }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('indonesian')">
-							indonesian {{ getProgress(688303, "id") }}%
+							indonesian {{ contentStore.translateProg.id }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('vietnamese')">
-							Vietnamese {{ getProgress(688303, "vi") }}%
+							Vietnamese {{ contentStore.translateProg.vi }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('thai')">
-							Thai {{ getProgress(688303, "th") }}%
+							Thai {{ contentStore.translateProg.th }}%
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('japanese')">
-							Japanese {{ getProgress(688303, "ja") }}%
+						<button
+							@click="authStore.settranslateProguage('japanese')"
+						>
+							Japanese {{ contentStore.translateProg.ja }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('malayalam')">
-							Malayalam {{ getProgress(688303, "ml-IN") }}%
+							Malayalam {{ contentStore.translateProg.ml }}%
 						</button>
 					</li>
 					<li>
@@ -228,31 +231,7 @@ const linkQuery = computed(() => {
 		</div>
 	</div>
 </template>
-<script>
-import crowdin from "@crowdin/crowdin-api-client";
-const { translationStatusApi } = new crowdin({
-	token: "0f2b00278afc836ccd296ca0806e788c06095414442f8e04f3d686d2a497c66ca9626af60fbef25e",
-});
-let progress;
-export async function getProgress1(projectId, languageId) {
-	// console.log(getProgress1(projectId, languageId));
-	// return getProgress1(projectId, languageId);
 
-	await translationStatusApi
-		.getLanguageProgress(projectId, languageId)
-		.then((response) => {
-			// console.log("Progress:");
-			// console.log(response.data[0].data.approvalProgress);
-			progress = response.data[0].data.approvalProgress;
-		});
-	// console.log(progress);
-}
-function getProgress(projectId, languageId) {
-	console.log(getProgress1(projectId, languageId));
-	console.log(progress);
-	return progress;
-}
-</script>
 <style scoped lang="scss">
 .navbar {
 	height: 60px;

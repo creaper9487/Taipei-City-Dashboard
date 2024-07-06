@@ -13,6 +13,10 @@ import { useDialogStore } from "./dialogStore";
 import { useAuthStore } from "./authStore";
 import { getComponentDataTimeframe } from "../assets/utilityFunctions/dataTimeframe";
 import i18n from "../i18n.js";
+import crowdin from "@crowdin/crowdin-api-client";
+const { translationStatusApi } = new crowdin({
+	token: "0f2b00278afc836ccd296ca0806e788c06095414442f8e04f3d686d2a497c66ca9626af60fbef25e",
+});
 
 export const useContentStore = defineStore("content", {
 	state: () => ({
@@ -40,6 +44,16 @@ export const useContentStore = defineStore("content", {
 			name: "我的新儀表板",
 			icon: "star",
 			components: [],
+		},
+		translateProg: {
+			en: 0,
+			km: 0,
+			my: 0,
+			id: 0,
+			vi: 0,
+			th: 0,
+			ja: 0,
+			ml: 0,
 		},
 		// Stores all contributors data. Reference the structure in /public/dashboards/all_contributors.json
 		contributors: {},
@@ -483,6 +497,26 @@ export const useContentStore = defineStore("content", {
 				this.setDashboards();
 			}
 		},
+		//7. Get Language Translation Progress
+		async progressTracker() {
+			let id = ["en", "km", "my", "id", "vi", "th", "ja", "ml-IN"];
+			for (let i = 0; i < id.length; i++) {
+				await translationStatusApi
+					.getLanguageProgress(688303, id[i])
+					.then((response) => {
+						// console.log("Progress:");
+						// console.log(response.data[0].data.approvalProgress);
+						if (id === "ml-IN") {
+							this.translateProg["ml"] =
+								response.data[0].data.approvalProgress;
+						} else {
+							this.translateProg.$languageID =
+								response.data[0].data.approvalProgress;
+						}
+					});
+			}
+		},
+
 		/*
 		wsConnect() {
 			const dialogStore = useDialogStore();
