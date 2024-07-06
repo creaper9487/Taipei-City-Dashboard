@@ -127,12 +127,12 @@ const linkQuery = computed(() => {
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('Japanese')">
+						<button @click="authStore.setLanguage('japanese')">
 							Japanese
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('Malayalam')">
+						<button @click="authStore.setLanguage('malayalam')">
 							Malayalam
 						</button>
 					</li>

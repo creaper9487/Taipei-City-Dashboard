@@ -6,6 +6,8 @@ import Burmese from "../src/locale/Burmese.json"; // Path to your translation me
 import indonesian from "../src/locale/Indonesian.json"; // Path to your translation messages
 import vietnamese from "../src/locale/Vietnamese.json"; // Path to your translation messages
 import thai from "../src/locale/Thai.json"; // Path to your translation messages
+import japanese from "../src/locale/Japanese.json"; // Path to your translation messages
+import malayalam from "../src/locale/Malayalam.json"; // Path to your translation messages
 
 const messages = {
 	zh,
@@ -15,6 +17,8 @@ const messages = {
 	indonesian,
 	vietnamese,
 	thai,
+	japanese,
+	malayalam,
 };
 const instance = createI18n({
 	locale: "zh", // Default locale
