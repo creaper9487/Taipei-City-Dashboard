@@ -9,7 +9,6 @@ import { useRoute } from "vue-router";
 import { useFullscreen } from "@vueuse/core";
 import { useAuthStore } from "../../../store/authStore";
 import { useDialogStore } from "../../../store/dialogStore";
-
 import UserSettings from "../../dialogs/UserSettings.vue";
 import ContributorsList from "../../dialogs/ContributorsList.vue";
 
@@ -92,48 +91,49 @@ const linkQuery = computed(() => {
 				<button><span>language</span></button>
 				<ul>
 					<li>
-						<button @click="authStore.setLanguage('en')">
-							English
-						</button>
-					</li>
-					<li>
 						<button @click="authStore.setLanguage('zh')">
 							繁體中文
 						</button>
 					</li>
 					<li>
+						<button @click="authStore.setLanguage('en')">
+							English {{ getProgress(688303, "en") }}%
+						</button>
+					</li>
+
+					<li>
 						<button @click="authStore.setLanguage('Khmer')">
-							Khmer
+							Khmer {{ getProgress(688303, "km") }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('Burmese')">
-							Burmese
+							Burmese {{ getProgress(688303, "my") }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('indonesian')">
-							indonesian
+							indonesian {{ getProgress(688303, "id") }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('vietnamese')">
-							Vietnamese
+							Vietnamese {{ getProgress(688303, "vi") }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('thai')">
-							Thai
+							Thai {{ getProgress(688303, "th") }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('japanese')">
-							Japanese
+							Japanese {{ getProgress(688303, "ja") }}%
 						</button>
 					</li>
 					<li>
 						<button @click="authStore.setLanguage('malayalam')">
-							Malayalam
+							Malayalam {{ getProgress(688303, "ml-IN") }}%
 						</button>
 					</li>
 					<li>
@@ -228,7 +228,31 @@ const linkQuery = computed(() => {
 		</div>
 	</div>
 </template>
+<script>
+import crowdin from "@crowdin/crowdin-api-client";
+const { translationStatusApi } = new crowdin({
+	token: "0f2b00278afc836ccd296ca0806e788c06095414442f8e04f3d686d2a497c66ca9626af60fbef25e",
+});
+let progress;
+export async function getProgress1(projectId, languageId) {
+	// console.log(getProgress1(projectId, languageId));
+	// return getProgress1(projectId, languageId);
 
+	await translationStatusApi
+		.getLanguageProgress(projectId, languageId)
+		.then((response) => {
+			// console.log("Progress:");
+			// console.log(response.data[0].data.approvalProgress);
+			progress = response.data[0].data.approvalProgress;
+		});
+	// console.log(progress);
+}
+function getProgress(projectId, languageId) {
+	console.log(getProgress1(projectId, languageId));
+	console.log(progress);
+	return progress;
+}
+</script>
 <style scoped lang="scss">
 .navbar {
 	height: 60px;

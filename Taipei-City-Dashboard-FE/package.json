@@ -12,13 +12,14 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@crowdin/crowdin-api-client": "^1.33.3",
 		"@deck.gl/core": "^9.0.9",
 		"@deck.gl/layers": "^9.0.9",
 		"@deck.gl/mapbox": "^9.0.9",
 		"@turf/turf": "^6.5.0",
 		"@vueuse/core": "^10.7.2",
 		"apexcharts": "^3.45.2",
-		"axios": "^1.6.5",
+		"axios": "^1.7.2",
 		"city-dashboard-component": "^1.1.0",
 		"dayjs": "^1.11.10",
 		"i18next": "^23.11.5",

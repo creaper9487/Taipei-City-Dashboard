@@ -22,6 +22,7 @@ services:
       DB_MANAGER_DBNAME: ${DB_MANAGER_DBNAME}
       DB_MANAGER_PORT: ${DB_MANAGER_PORT}
       MANAGER_SAMPLE_FILE: ${MANAGER_SAMPLE_FILE:-dashboardmanager-demo.sql}
+      CROWDIN_API_KEY: ${CROWDIN_API_KEY}
     volumes:
       - ../Taipei-City-Dashboard-BE:/opt/Taipei-City-Dashboard-BE
       - ../db-sample-data:/opt/db-sample-data
