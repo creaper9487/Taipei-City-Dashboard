@@ -127,6 +127,16 @@ const linkQuery = computed(() => {
 						</button>
 					</li>
 					<li>
+						<button @click="authStore.setLanguage('Japanese')">
+							Japanese
+						</button>
+					</li>
+					<li>
+						<button @click="authStore.setLanguage('Malayalam')">
+							Malayalam
+						</button>
+					</li>
+					<li>
 						<a
 							href="https://crowdin.com/project/TaipeiDashBoardDemo"
 							target="_blank"
