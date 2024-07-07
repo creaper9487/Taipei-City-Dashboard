@@ -1,35 +1,66 @@
-# <img src='Taipei-City-Dashboard-FE/src/assets/images/TUIC.svg' height='28'> Taipei City Dashboard
+---
+title: SITCON Hackathon 2024 專案 README 模板
+tags: [SITCON Hackathon 2024, ' SITCON', '  Hackathon ', ' 2024 ']
 
-## Introduction
+---
 
-Taipei City Dashboard is a data visualization platform developed by [Taipei Urban Intelligence Center (TUIC)](https://tuic.gov.taipei/en).
 
-Our main goal is to create a comprehensive data visualization tool to assist in Taipei City policy decisions. This was achieved through the first version of the Taipei City Dashboard, which displayed a mix of internal and open data, seamlessly blending statistical and geographical data.
 
-Fast forward to mid-2023, as Taipei City’s open data ecosystem matured and expanded, our vision gradually expanded as well. We aimed not only to aid policy decisions but also to keep citizens informed about the important statistics of their city. Given the effectiveness of this tool, we also hoped to publicize the codebase for this project so that any relevant organization could easily create a similar data visualization tool of their own.
+# CityTranslator
 
-Our dashboard, made yours.
+SITCON Hackathon 2024 成果發表範例
 
-Based on the above vision, we decided to begin development on Taipei City Dashboard 2.0. Unlike its predecessor, Taipei City Dashboard 2.0 will be a public platform instead of an internal tool. The codebase for Taipei City Dashboard will also be open-sourced, inviting all interested parties to participate in the development of this platform.
+## 競賽議題 & 子議題
+- 團隊名稱：IgNIT3
+- 成員姓名：謝昕倫, 李芸榛, {莊庭愷}
+- 競賽議題：公創新世代：學生力量與科技共創公民參與
+    - 子議題：智慧城市 X 臺北市政府資訊局
 
-We have since released Taipei City Dashboard 2.0 to the general public. From now on, you will be able to suggest features and changes to Taipei City Dashboard and develop the platform alongside us. We are excited for you to join Taipei City Dashboard’s journey!
 
-Please refer to the docs for the [Chinese Version](https://tuic.gov.taipei/documentation/front-end/introduction) (and click on the "switch languages" icon in the top right corner).
+### 專案簡介
+- 用途/功能：將專案翻譯成多國語言，並以 Crowdin 邀請公民協作。
 
-[Official Site](https://citydashboard.taipei) | [License](https://github.com/tpe-doit/Taipei-City-Dashboard/blob/main/LICENSE) | [Code of Conduct](https://github.com/tpe-doit/Taipei-City-Dashboard/blob/main/.github/CODE_OF_CONDUCT.md) | [Contribution Guide](https://tuic.gov.taipei/documentation/front-end/contribution-overview)
+- 目標客群：
+    - 由不同文化、語言的台北公民們共同參與
+- 使用情境：
+    - 提供一個能夠讓儀表板推廣給更多人的貢獻方式（而且不一定要會寫程式！）
 
-## Quick Start
+- 操作方式：
+    - 儀表板網站
+        - 進入網站，在地球儀 icon 選單中可切換語言。
+    - Crowdin
+        - 可從 Dashboard 中加入協作。
+### 使用資源
+- 企業資源：
+    Crowdin，一個提供翻譯平台的工具，具自動 push 翻譯到存放庫的功能。
+- 公開資源：
+    Vue-i18n <br>此工具用於將翻譯過的字串套用在網頁上
 
-Please refer to the [Docs](https://tuic.gov.taipei/documentation/front-end/project-setup) for the quick start guide.
+### 你還想分享的事情
+- 開發過程&心得
+  - 聽起來還好的功能卻要花很多時間做
+  - 一次學了 vue, crowdin, go, docker 和好多有趣的東西，是我第一個沒放棄的專案
+  - 桃園也需要這個酷咚咚，台北的學生作自主學習有這個好幸福。
+- 遇到的困難
+  - 如上所述，學習成本不小，但一點一點摸索出來的感覺很讓人上癮。
+  - 我們隊友不見了@@
+  
 
-## Documentation
+jjjjjjjjjjjjjjjjjjjjjjjjjjjjffffffffffffjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjffffffffffjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
 
-Check out the complete documentation for Taipei City Dashboard [here](https://tuic.gov.taipei/documentation).
+jjjjjjjjjjjjjjjjjjjjjjjjfffffffjjjjjjjfffffffjjjjjjjjjjjjjjjjjjjjjjjjjjfffffffjjjjjfffffffffjjjjjjjjjjjjjjjjjjjjj
 
-## Contributors
+jjjjjjjjjjjjjfffffffffffffffffffffffffffffjfffjffffffffjffjffffffffffffffffffffffffffjjjjjjjjj
 
-Many thanks to the contributors to this project!
+jjjjjjjjjjjfffffffffffffffffffffffffffffffjjjjjjfffffffjjjjjjfffffffffffffffffffffffffffjjjjjjj
 
-<a href="https://github.com/tpe-doit/Taipei-City-Dashboard/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=tpe-doit/Taipei-City-Dashboard" />
-</a>
+jjjjjjjjjjjffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffjjjjjj
+
+jjjjjjjjjjjffffffffffffffffffffffffffffffffffffjjjjjjjjjjjfffffffffffffffffffffffffffffjjjjjjjj
+
+jjjjjjjjjjjjjjfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffjjjjjjjjjjj
+
+jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjffffffffjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+### 成果展示
+- 可附上其他專案介紹的投影片/文件等等
+> [SITCON Hackathon 2024](https://www.canva.com/design/DAGJkLPMT1g/yqpAncF-JLJEYkJ_WaJB1Q/edit?utm_content=DAGJkLPMT1g&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
