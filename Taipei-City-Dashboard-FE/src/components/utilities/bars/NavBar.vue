@@ -92,50 +92,48 @@ const linkQuery = computed(() => {
 				<button><span>language</span></button>
 				<ul>
 					<li>
-						<button @click="authStore.setLanguage('zh')">
+						<button @click="contentStore.setLanguage('zh')">
 							繁體中文
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('en')">
+						<button @click="contentStore.setLanguage('en')">
 							English {{ contentStore.translateProg.en }}%
 						</button>
 					</li>
 
 					<li>
-						<button @click="authStore.setLanguage('Khmer')">
+						<button @click="contentStore.setLanguage('Khmer')">
 							Khmer {{ contentStore.translateProg.km }}%
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('Burmese')">
+						<button @click="contentStore.setLanguage('Burmese')">
 							Burmese {{ contentStore.translateProg.my }}%
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('indonesian')">
+						<button @click="contentStore.setLanguage('indonesian')">
 							indonesian {{ contentStore.translateProg.id }}%
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('vietnamese')">
+						<button @click="contentStore.setLanguage('vietnamese')">
 							Vietnamese {{ contentStore.translateProg.vi }}%
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('thai')">
+						<button @click="contentStore.setLanguage('thai')">
 							Thai {{ contentStore.translateProg.th }}%
 						</button>
 					</li>
 					<li>
-						<button
-							@click="authStore.settranslateProguage('japanese')"
-						>
+						<button @click="contentStore.setLanguage('japanese')">
 							Japanese {{ contentStore.translateProg.ja }}%
 						</button>
 					</li>
 					<li>
-						<button @click="authStore.setLanguage('malayalam')">
+						<button @click="contentStore.setLanguage('malayalam')">
 							Malayalam {{ contentStore.translateProg.ml }}%
 						</button>
 					</li>

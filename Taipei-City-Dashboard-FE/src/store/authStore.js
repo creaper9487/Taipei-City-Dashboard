@@ -11,7 +11,6 @@ import router from "../router/index";
 import { useContentStore } from "./contentStore";
 import { useDialogStore } from "./dialogStore";
 import { useMapStore } from "./mapStore";
-import { i18n } from "../i18n";
 
 export const useAuthStore = defineStore("auth", {
 	state: () => ({
@@ -25,7 +24,6 @@ export const useAuthStore = defineStore("auth", {
 			is_blacked: null,
 			login_at: null,
 			is_admin: false,
-			lang: "zh",
 		},
 		editUser: {},
 		token: null,
@@ -153,11 +151,6 @@ export const useAuthStore = defineStore("auth", {
 			await http.patch("/user/me", { theme: this.user.theme });
 			document.getElementsByTagName("body")[0].className =
 				this.user.theme;
-		},
-		async setLanguage(lang) {
-			this.user.lang = lang;
-			await http.patch("/user/me", { lang: this.user.lang });
-			i18n.locale = lang;
 		},
 
 		/* Other Utility Functions */

@@ -12,7 +12,7 @@ import router from "../router/index";
 import { useDialogStore } from "./dialogStore";
 import { useAuthStore } from "./authStore";
 import { getComponentDataTimeframe } from "../assets/utilityFunctions/dataTimeframe";
-import i18n from "../i18n.js";
+import { i18n } from "../i18n";
 import crowdin from "@crowdin/crowdin-api-client";
 const { translationStatusApi } = new crowdin({
 	token: "0f2b00278afc836ccd296ca0806e788c06095414442f8e04f3d686d2a497c66ca9626af60fbef25e",
@@ -62,6 +62,7 @@ export const useContentStore = defineStore("content", {
 		// Stores whether an error occurred
 		error: false,
 		ws: false,
+		lang: "zh",
 	}),
 	getters: {
 		getTranlation(a) {
@@ -515,6 +516,12 @@ export const useContentStore = defineStore("content", {
 						}
 					});
 			}
+		},
+		//setLang
+		async setLanguage(lang) {
+			this.lang = lang;
+			// await http.patch("/user/me", { lang: this.user.lang });
+			i18n.locale = lang;
 		},
 
 		/*
