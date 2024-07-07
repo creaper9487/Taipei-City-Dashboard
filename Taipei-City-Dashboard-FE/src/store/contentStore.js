@@ -15,7 +15,7 @@ import { getComponentDataTimeframe } from "../assets/utilityFunctions/dataTimefr
 import { i18n } from "../i18n";
 import crowdin from "@crowdin/crowdin-api-client";
 const { translationStatusApi } = new crowdin({
-	token: "2e4d9e41e52ca9a5436f953065dbf1b4a62d02c51c26d41007aca41f6e06d63461bf09b932848362",
+	token: "CROWDIN_API_KEY",
 });
 
 export const useContentStore = defineStore("content", {
