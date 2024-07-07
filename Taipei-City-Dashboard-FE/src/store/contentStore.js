@@ -15,7 +15,7 @@ import { getComponentDataTimeframe } from "../assets/utilityFunctions/dataTimefr
 import { i18n } from "../i18n";
 import crowdin from "@crowdin/crowdin-api-client";
 const { translationStatusApi } = new crowdin({
-	token: "0f2b00278afc836ccd296ca0806e788c06095414442f8e04f3d686d2a497c66ca9626af60fbef25e",
+	token: "2e4d9e41e52ca9a5436f953065dbf1b4a62d02c51c26d41007aca41f6e06d63461bf09b932848362",
 });
 
 export const useContentStore = defineStore("content", {
@@ -63,12 +63,9 @@ export const useContentStore = defineStore("content", {
 		error: false,
 		ws: false,
 		lang: "zh",
+		controlVar: 0,
 	}),
-	getters: {
-		getTranlation(a) {
-			return i18n.t(a);
-		},
-	},
+	getters: {},
 	actions: {
 		/* Steps in adding content to the application (/dashboard or /mapview) */
 		// 1. Check the current path and execute actions based on the current path
@@ -511,7 +508,7 @@ export const useContentStore = defineStore("content", {
 							this.translateProg["ml"] =
 								response.data[0].data.approvalProgress;
 						} else {
-							this.translateProg.$languageID =
+							this.translateProg[i] =
 								response.data[0].data.approvalProgress;
 						}
 					});

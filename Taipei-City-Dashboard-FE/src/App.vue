@@ -129,7 +129,35 @@ onBeforeUnmount(() => {
 		</div>
 	</div>
 </template>
+<!-- <script>
+import { useContentStore } from "./store/contentStore";
+import crowdin from "@crowdin/crowdin-api-client";
+const { translationStatusApi } = new crowdin({
+	token: "CROWDIN_API_KEY",
+});
 
+// async function progressTracker() {
+// 	let id = ["en", "km", "my", "id", "vi", "th", "ja", "ml-IN"];
+// 	for (let i = 0; i < id.length; i++) {
+// 		await translationStatusApi
+// 			.getLanguageProgress(688303, id[i])
+// 			.then((response) => {
+// 				// console.log("Progress:");
+// 				// console.log(response.data[0].data.approvalProgress);
+// 				if (id[i] === "ml-IN") {
+// 					useContentStore.translateProg["ml"] =
+// 						response.data[0].data.approvalProgress;
+// 				} else {
+// 					useContentStore.translateProg.$id[i] =
+// 						response.data[0].data.approvalProgress;
+// 				}
+// 			});
+// 		console.log("fetched");
+// 	}
+// }
+// progressTracker();
+//
+</script> -->
 <style scoped lang="scss">
 .app {
 	&-container {

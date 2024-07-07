@@ -4,28 +4,31 @@
 
 <script setup>
 const { VITE_APP_TITLE } = import.meta.env;
-import { computed } from "vue";
+import { computed, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 import { useFullscreen } from "@vueuse/core";
 import { useAuthStore } from "../../../store/authStore";
 import { useDialogStore } from "../../../store/dialogStore";
 import { useContentStore } from "../../../store/contentStore";
+
 import UserSettings from "../../dialogs/UserSettings.vue";
 import ContributorsList from "../../dialogs/ContributorsList.vue";
 const route = useRoute();
 const authStore = useAuthStore();
-const dialogStore = useDialogStore();
 const contentStore = useContentStore();
+const dialogStore = useDialogStore();
 const { isFullscreen, toggle } = useFullscreen();
 
 const linkQuery = computed(() => {
 	const { query } = route;
 	return `?index=${query.index}`;
 });
+
+contentStore.progressTracker();
 </script>
 
 <template>
-	<div @load="contentStore.progressTracker" class="navbar">
+	<div class="navbar">
 		<a href="/">
 			<div class="navbar-logo">
 				<div class="navbar-logo-image">
@@ -88,7 +91,11 @@ const linkQuery = computed(() => {
 					<span>theme</span>
 				</button>
 			</div> -->
-			<div class="navbar-user-info">
+			<div
+				:key="contentStore.controlVar"
+				@hover="contentStore.progressTracker"
+				class="navbar-user-info"
+			>
 				<button><span>language</span></button>
 				<ul>
 					<li>
