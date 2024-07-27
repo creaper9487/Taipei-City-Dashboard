@@ -28,6 +28,7 @@ function handleClose() {
 	currentContributor.value = null;
 	dialogStore.dialogs.contributorsList = false;
 }
+dialogStore.getTransContributors();
 </script>
 
 <template>
@@ -52,6 +53,16 @@ function handleClose() {
 				</button>
 			</div>
 			<ContributorInfo :contributor="currentContributor" />
+		</div>
+
+		<div class="contributorslist">
+			<h2>{{ $t("翻譯貢獻者清單") }}</h2>
+			<label> {{ $t("加入貢獻！") }} </label>
+			<div class="contributorslist-list">
+				<p v-for="item in dialogStore.translators" :key="item">
+					{{ item }}
+				</p>
+			</div>
 		</div>
 	</DialogContainer>
 </template>

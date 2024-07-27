@@ -7,8 +7,12 @@ To add a new dialog to the existing list, simply give the dialog a name and add 
 Then, in the component add a conditional statement to render the component only if it's value is switched to true.
 Finally, remember to add the component to the application.
 */
+import crowdin from "@crowdin/crowdin-api-client";
 
 import { defineStore } from "pinia";
+const { usersApi } = new crowdin({
+	token: "463c35ecd5fce395043409e81a3bb9d190c722219f930240967952a0c2562a0ac0bbbd6eef230294",
+});
 
 export const useDialogStore = defineStore("dialog", {
 	state: () => ({
@@ -62,6 +66,7 @@ export const useDialogStore = defineStore("dialog", {
 		addEdit: "",
 		// Stores the current timeout for notifications
 		curTimeout: null,
+		translators: [],
 	}),
 	getters: {},
 	actions: {
@@ -108,6 +113,14 @@ export const useDialogStore = defineStore("dialog", {
 				index: index,
 				name: name,
 			};
+		},
+		async getTransContributors() {
+			await usersApi.listProjectMembers(688303).then((res) => {
+				res.data.forEach((element) => {
+					this.translators.push(element.data.username);
+					return this.translators;
+				});
+			});
 		},
 	},
 });

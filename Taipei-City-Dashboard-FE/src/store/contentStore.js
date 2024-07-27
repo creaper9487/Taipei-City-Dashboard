@@ -6,6 +6,7 @@
 /*
 The contentStore calls APIs to get content info and stores it.
 */
+
 import { defineStore } from "pinia";
 import http from "../router/axios";
 import router from "../router/index";
@@ -15,7 +16,7 @@ import { getComponentDataTimeframe } from "../assets/utilityFunctions/dataTimefr
 import { i18n } from "../i18n";
 import crowdin from "@crowdin/crowdin-api-client";
 const { translationStatusApi } = new crowdin({
-	token: "CROWDIN_API_KEY",
+	token: "463c35ecd5fce395043409e81a3bb9d190c722219f930240967952a0c2562a0ac0bbbd6eef230294",
 });
 
 export const useContentStore = defineStore("content", {
@@ -65,7 +66,11 @@ export const useContentStore = defineStore("content", {
 		lang: "zh",
 		controlVar: 0,
 	}),
-	getters: {},
+	getters: {
+		getTranslateProg: (state) => (lang) => {
+			return state.translateProg[lang];
+		},
+	},
 	actions: {
 		/* Steps in adding content to the application (/dashboard or /mapview) */
 		// 1. Check the current path and execute actions based on the current path
@@ -512,8 +517,11 @@ export const useContentStore = defineStore("content", {
 								response.data[0].data.approvalProgress;
 						}
 					});
+				// this.controlVar += 1;
+				// console.log(this.controlVar);
 			}
 		},
+
 		//setLang
 		async setLanguage(lang) {
 			this.lang = lang;

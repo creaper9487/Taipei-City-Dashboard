@@ -4,7 +4,7 @@
 
 <script setup>
 const { VITE_APP_TITLE } = import.meta.env;
-import { computed, onBeforeMount } from "vue";
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useFullscreen } from "@vueuse/core";
 import { useAuthStore } from "../../../store/authStore";
@@ -25,10 +25,12 @@ const linkQuery = computed(() => {
 });
 
 contentStore.progressTracker();
+let key = 1;
+key++;
 </script>
 
 <template>
-	<div class="navbar">
+	<div :key="key" @load="key++" class="navbar">
 		<a href="/">
 			<div class="navbar-logo">
 				<div class="navbar-logo-image">
@@ -91,11 +93,7 @@ contentStore.progressTracker();
 					<span>theme</span>
 				</button>
 			</div> -->
-			<div
-				:key="contentStore.controlVar"
-				@hover="contentStore.progressTracker"
-				class="navbar-user-info"
-			>
+			<div class="navbar-user-info">
 				<button><span>language</span></button>
 				<ul>
 					<li>
@@ -105,7 +103,8 @@ contentStore.progressTracker();
 					</li>
 					<li>
 						<button @click="contentStore.setLanguage('en')">
-							English {{ contentStore.translateProg.en }}%
+							English
+							{{ contentStore.translateProg.en }}%
 						</button>
 					</li>
 
