@@ -52,10 +52,11 @@ onMounted(() => {
 			<h2>{{ isExpanded ? $t("我的最愛") : `最愛` }}</h2>
 			<SideBarTab
 				icon="favorite"
-				title="收藏組件"
+				v-t="'收藏組件'"
 				:expanded="isExpanded"
 				:index="contentStore.favorites?.index"
-			/>
+			>
+			</SideBarTab>
 			<div class="sidebar-sub-add">
 				<h2>{{ isExpanded ? $t("個人儀表板") : `個人` }}</h2>
 				<button v-if="isExpanded" @click="handleOpenAddDashboard">
@@ -97,7 +98,7 @@ onMounted(() => {
 		<h2>{{ isExpanded ? $t("基本地圖圖層") : `圖層` }}</h2>
 		<SideBarTab
 			icon="public"
-			title="圖資資訊"
+			v-t="'圖資資訊'"
 			:expanded="isExpanded"
 			index="map-layers"
 		/>
