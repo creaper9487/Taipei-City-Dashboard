@@ -47,7 +47,7 @@ export const useContentStore = defineStore("content", {
 			components: [],
 		},
 		translateProg: {
-			en: 0,
+			en: 100,
 			km: 0,
 			my: 0,
 			id: 0,
