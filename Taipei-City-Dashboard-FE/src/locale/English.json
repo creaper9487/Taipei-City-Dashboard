@@ -39,11 +39,11 @@
 	"翻譯貢獻者清單": "Translators",
 	"加入貢獻！": "Join Translation!",
 	"圖資資訊": "Map information",
-	"組件說明": "組件說明",
-	"範例情境": "範例情境",
-	"歷史軸": "歷史軸",
-	"*點擊並拉動以檢視細部區間資料": "*點擊並拉動以檢視細部區間資料",
-	"相關資料": "相關資料",
-	"協作者": "協作者",
-	"內嵌": "內嵌"
+	"組件說明": "Component Information",
+	"範例情境": "Examples",
+	"歷史軸": "Timeline",
+	"*點擊並拉動以檢視細部區間資料": "*Click and drag to view detailed interval data",
+	"相關資料": "Relating information",
+	"協作者": "Contributor(s)",
+	"內嵌": "Embedded"
 }
